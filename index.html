@@ -45,6 +45,15 @@
             background-clip: text;
             animation: fadeInUp 1s ease-out;
         }
+        .hero h2 {
+            font-family: 'Great Vibes', cursive; /* Font yang lebih bagus dan elegan untuk wedding */
+            font-size: 3.5em;
+            background: linear-gradient(to left, #ff6b6b, #4ecdc4); /* Gradient warna untuk efek berwarna */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
         .hero p {
             font-size: 1.2em;
             animation: fadeIn 1s ease-out 0.5s both;
@@ -89,6 +98,30 @@
             object-fit: cover;
             border-radius: 10px;
             filter: grayscale(100%); /* Gambar hitam-putih */
+        }
+        /* Animasi untuk galeri bergerak */
+        .portfolio-slider {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .portfolio-track {
+            display: flex;
+            width: calc(300px * 6); /* 3 gambar asli + 3 duplikat untuk loop mulus */
+            animation: scroll 20s linear infinite; /* Durasi animasi, sesuaikan kecepatan */
+        }
+        .portfolio-track img {
+            width: 300px; /* Lebar tetap untuk setiap gambar */
+            margin-right: 20px; /* Jarak antar gambar */
+            flex-shrink: 0;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Geser setengah untuk loop */
+            }
         }
         footer {
             background: #000000; /* Hitam */
@@ -142,7 +175,7 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Selamat Datang di SMWedding</h1>
-            <p>Wedding Organizer Terpercaya untuk Hari Spesial Anda</p>
+            <h2>Wedding Organizer Terpercaya untuk Hari Spesial Anda</h2>
             <div id="heroCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -216,15 +249,15 @@
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="text-center">Galeri Acara</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="https://via.placeholder.com/400x250?text=Wedding+1" alt="Wedding 1">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://via.placeholder.com/400x250?text=Wedding+2" alt="Wedding 2">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://via.placeholder.com/400x250?text=Wedding+3" alt="Wedding 3">
+            <div class="portfolio-slider">
+                <div class="portfolio-track">
+                    <img src="foto8.jpeg" alt="Wedding 1">
+                    <img src="foto4.jpeg" alt="Wedding 2">
+                    <img src="foto5.jpeg" alt="Wedding 3">
+                    <!-- Duplikasi gambar untuk loop mulus -->
+                    <img src="foto8.jpeg" alt="Wedding 1">
+                    <img src="foto4.jpeg" alt="Wedding 2">
+                    <img src="foto5.jpeg" alt="Wedding 3">
                 </div>
             </div>
         </div>
@@ -279,8 +312,9 @@
                 </div>
                 <div class="col-md-6">
                     <p>Email: info@smwedding.com</p>
-                    <p>Telepon: +62 123 456 789</p>
-                    <p>Alamat: Jakarta, Indonesia</p>
+                    <p>Telepon: +62 812-8758-2642</p>
+                    <p>Instagram: @smweddingorganizer_</p>
+                    <p>Alamat: Perumahan Talaga Bestari, Neo Palem Merah, blok J2 no 10  RT 8 RW 5, Wanakerta, Sindang Jaya, Tangerang 15560</p>
                 </div>
             </div>
         </div>
