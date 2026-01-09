@@ -1,3 +1,14 @@
+<think>
+Pertama, pengguna mengatakan: "saya menggunakan gambar png, jadi gausah pake border". Ini berarti mereka menggunakan gambar PNG, jadi tidak perlu border.
+
+
+## Understanding User Input  
+- The user mentioned using PNG images, so borders are unnecessary.  
+- This suggests focusing on image handling without additional styling like borders.
+
+## Reviewing CSS Styling  
+- Found a WhatsApp button styled with fixed positioning, round shape, and a shadow effect.
+</think>```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -141,6 +152,26 @@
         }
         .btn-primary:hover {
             background: #333333; /* Abu-abu gelap */
+        }
+        /* Style untuk tombol WhatsApp */
+        #whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        #whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        #whatsapp-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -327,6 +358,13 @@
         </div>
     </footer>
 
+    <!-- Tombol WhatsApp -->
+    <div id="whatsapp-button">
+        <a href="https://wa.link/18o3ds" target="_blank">
+            <img src="foto9.png" alt="Hubungi via WhatsApp">
+        </a>
+    </div>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -370,3 +408,4 @@
     </script>
 </body>
 </html>
+```
